@@ -29,7 +29,10 @@ public class ServeiPokemon {
     }
 
     public void afegir(Pokemon pokemon){
-        repositori.save(pokemon);
+        Pokemon pkm = consultaPerNumero(pokemon.getNumero());
+        if (pkm.getNumero() != pokemon.getNumero()){
+            repositori.save(pokemon);
+        }
     }
 
     public void substituir(Pokemon pkm){

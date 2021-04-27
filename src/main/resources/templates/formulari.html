@@ -9,7 +9,7 @@
     <!-- si el id == 0 és la primera vegada que utilitzo el form, per tant new Empleat -->
     <!--si el id != 0 ja té valors, i envio per editar, modificar, substituir empleat -->
 
-    <h1 th:text="${formPokemon.nom!=0}?'Editar pokemon': 'Nou pokemon'">bla bla empleat</h1>
+    <h1 th:text="${formPokemon.numero!=0}?'Editar pokemon': 'Nou pokemon'">bla bla empleat</h1>
     Numero <input type="text" id="numero" placeholder="1" th:field="*{numero}" th:attrappend="readonly=${formPokemon.numero!=0}?'readonly':null"><br/>
     Nom <input type="text" id="nom" placeholder="Nom" th:field="*{nom}"><br/>
     Tipus <input type="text" id="tipus" placeholder="Tipus" th:field="*{tipus}"><br/>
