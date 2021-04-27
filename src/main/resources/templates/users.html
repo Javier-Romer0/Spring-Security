@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<h4>Llista usuaris</h4>
+<table>
+    <thead>
+    <tr>
+        <th>Nom</th>
+
+    </tr></br>
+    </thead>
+    <tbody>
+    <tr th:each="usuari : ${llistaUsers}">
+        <td th:text="${usuari.username}">Pepe Pérez</td>
+
+    </tr>
+    </tbody>
+</table>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sortir (Sign Out)"/>
+</form>
+</body>
+</html>

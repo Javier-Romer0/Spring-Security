@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon</title>
+</head>
+<body>
+<h1>Pokemon list</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Numero</th>
+        <th>Nom</th>
+        <th>Tipus</th>
+        <th>Poder</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+
+    </tr></br>
+    </thead>
+    <tbody>
+    <tr th:each="pokemon : ${llistaPokemon}">
+        <td th:text="${pokemon.numero}">123</td>
+        <td th:text="${pokemon.nom}">Pepe Pérez</td>
+        <td th:text="${pokemon.tipus}">123</td>
+        <td th:text="${pokemon.poder}">123</td>
+        <td><a th:href="@{/pokemon/edit/{numero}(numero=${pokemon.numero})}">Editar</a> </td>
+        <td><a th:href="@{/pokemon/eliminar/{numero}(numero=${pokemon.numero})}">Eliminar</a> </td><br/>
+
+    </tr>
+    </tbody>
+</table>
+<a href="/pokemon/new">New Pokemon</a>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sortir (Sign Out)"/>
+</form>
+</body>
+</html>
